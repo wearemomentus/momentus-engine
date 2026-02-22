@@ -1,0 +1,34 @@
+---
+description: Momentus Dashboard Project Rules
+globs: ["**/*.ts", "**/*.tsx"]
+---
+
+# Project Rules
+
+## Stack
+- Next.js 15 with App Router
+- TypeScript strict mode
+- Tailwind CSS v4
+- Supabase for database
+
+## Code Style
+- Functional components only
+- Named exports for components
+- Use `cn()` helper for conditional classes
+- Prefer server components
+
+## File Organization
+- Components in `src/components/`
+- Shared UI in `src/components/ui/`
+- Utilities in `src/lib/`
+- Types in `src/types/`
+
+## Supabase
+- Browser client: `import { createClient } from '@/lib/supabase/client'`
+- Server client: `import { createClient } from '@/lib/supabase/server'`
+- Always use typed queries
+
+## Git
+- Never push to main
+- Feature branches → staging → main
+- Run `pnpm type-check` before commits
