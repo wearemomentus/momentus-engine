@@ -1,3 +1,4 @@
+import path from "node:path";
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
@@ -17,10 +18,11 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
   ],
-  webServer: process.env.CI
+  webServer: process.env.BASE_URL
     ? undefined
     : {
         command: "pnpm dev",
+        cwd: path.resolve(__dirname, ".."),
         url: "http://localhost:3000",
         reuseExistingServer: !process.env.CI,
       },
